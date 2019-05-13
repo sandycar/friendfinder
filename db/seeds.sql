@@ -1,0 +1,16 @@
+INSERT INTO friendfilter_statements (statements) VALUES 
+('I prefer movies that have to do with gangs and crimes'), 
+('I enjoy movies like Mission Impossible'), 
+('I prefer romantic comedies over scary films'), 
+('I prefer scary over action films'), 
+('I love comedies that star Seth Rogen'), 
+('I really enjoy sci-fi movies like Start Trek or Star wars'), 
+('I really enjoy movies like Avengers: Endgame'), 
+('I really like period piece movies like 12 Years A Slave'), 
+('I only watch movies where I know all the main actors'), 
+('I only watch movies by disney'), 
+('I will not watch movies with excessive violence'), 
+('I will not watch movies that are bloody'), 
+('I will watch a movie with subtitles if the story seems interesting'),
+('I love animation based films like Toy Story'),
+('I like watching documentaries');
