@@ -1,6 +1,8 @@
 var express = require('express')
+
 var app = express()
- 
+var path = require('path')
+
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
   host     : 'localhost',
@@ -11,13 +13,17 @@ var connection = mysql.createConnection({
  
 connection.connect();
 
+app.set('view engine', 'ejs');
+
 app.get('/', function(req, res){
     connection.query('SELECT * FROM friendfilter_statements', function (error, results, fields) {
         if (error) res.send(error)
-        else res.json(results);
+        console.log(results)
+        res.render('index', {data:results})
         // if (error) throw error;
         console.log('questions should show now');
       });
+    
 })
 
  
@@ -26,7 +32,10 @@ app.get('/', function(req, res){
 app.get('/survey', function (req, res) {
     res.sendFile(path.join(__dirname,'public/survey.html'));
     console.log('show survey html file')
+
 });
+
+
  
 app.listen(3000)
 console.log ('Listening on localhost 3K')

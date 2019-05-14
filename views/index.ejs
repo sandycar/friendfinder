@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body class="container">
+
+	<main>
+    <div class=“jumbotron”>
+		<h1 class="display-4 jumbotron text-center bg-dark text-white">Friends That Are Down For a Movie</h1>
+		<div class=“jumbotron”>
+                <h2 class="lead font-italic">From the statements below answer as honestly as you can to find out who you most align with in movie taste
+                        <hr class="my-4">
+                </h2>
+                <form method='POST' action='/api/friendfinder'>
+                <p><% for(var i=0; i<data.length; i++) { %>
+                       <label name= <%= data[i].id %>/><%= data[i].statements %></label>
+                        <br>
+                       <select class=“chosen-select” id= <%= data[i].id %>>
+                           <option value=“”></option>
+                           <option value=“1">1 (Strongly Disagree)</option>
+                           <option value=“2”>2</option>
+                           <option value=“3">3</option>
+                           <option value=“4”>4</option>
+                           <option value=“5">5 (Strongly Agree)</option>
+                   </select><br>
+                   <% } %></p>
+                   <input class="btn btn-primary" type='submit'value='submit'>
+                </form>
+            </div>
+        </div>    
+	</main>
+
+</body>
+</html>
